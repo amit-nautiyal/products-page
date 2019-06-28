@@ -49,35 +49,41 @@ class App extends React.Component {
         </header>
         <div className="container">
           {items.map((item, i) => (
-            <div className="product" key={i}>
-              <div className="product__image">
-                <img
-                  src={`/images/${item.productImage}`}
-                  alt={item.productImage}
-                />
-              </div>
-              <div className="product__type">
-                {item.isSale && (
-                  <div className="button button-red" type="button">
-                    Sale
-                  </div>
-                )}
-                {item.isExclusive && (
-                  <div className="button button-green" type="button">
-                    Exclusive
-                  </div>
-                )}
-              </div>
-              <div className="product__footer">
-                <div className="product__name">{item.productName}</div>
-                <div className="product__price">{item.price}</div>
-              </div>
-            </div>
+            <Product key={i} product={item} />
           ))}
         </div>
       </div>
     );
   }
 }
+
+const Product = props => {
+  return (
+    <div className="product">
+      <div className="product__image">
+        <img
+          src={`/images/${props.product.productImage}`}
+          alt={props.product.productImage}
+        />
+      </div>
+      <div className="product__type">
+        {props.product.isSale && (
+          <div className="button button-red" type="button">
+            Sale
+          </div>
+        )}
+        {props.product.isExclusive && (
+          <div className="button button-green" type="button">
+            Exclusive
+          </div>
+        )}
+      </div>
+      <div className="product__footer">
+        <div className="product__name">{props.product.productName}</div>
+        <div className="product__price">{props.product.price}</div>
+      </div>
+    </div>
+  );
+};
 
 export default App;
