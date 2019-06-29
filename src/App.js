@@ -36,21 +36,23 @@ class App extends React.Component {
     let items = this.state.items;
     return (
       <div className="page">
-        <header className="page__header">
-          <h1>Women's tops</h1>
-          <select onChange={this.handleChange}>
-            <option value="">Filter by size</option>
-            <option value="XS">XS</option>
-            <option value="S">S</option>
-            <option value="M">M</option>
-            <option value="L">L</option>
-            <option value="XL">XL</option>
-          </select>
-        </header>
-        <div className="container">
-          {items.map((item, i) => (
-            <Product key={i} product={item} />
-          ))}
+        <div className='page__inner-frame'>
+          <header className="page__header">
+            <h1>Women's tops</h1>
+            <select onChange={this.handleChange}>
+              <option value="">Filter by size</option>
+              <option value="XS">XS</option>
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+            </select>
+          </header>
+          <div className="container">
+            {items.map((item, i) => (
+              <Product key={i} product={item} />
+            ))}
+          </div>
         </div>
       </div>
     );
