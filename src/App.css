@@ -1,6 +1,10 @@
 .page {
   margin: 45px auto;
-  max-width: 1320px;
+  max-width: 1360px;
+}
+
+page__inner-frame {
+  margin: 0 20px;
 }
 
 .page__header {
@@ -17,6 +21,10 @@
   font-weight: bold;
   padding: 0;
   margin: 0;
+}
+
+.page__header select {
+  font-size: 14px;
 }
 
 .flex-row {
